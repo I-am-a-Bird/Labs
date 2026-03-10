@@ -65,8 +65,24 @@ public class App {
                     for(int i = 0; i < list.length; i++) {
                         System.out.println("Creation of " + (i+1) + " PC");
                         if(i == 0) {
-                            System.out.println("Cannot copy first PC. Using default.");
-                            list[i] = new CreatePC();
+                            System.out.println("Cannot copy first PC. Using constructor with parameters.");
+                            System.out.print("Enter the name of CPU:");
+                            String CPU=scanner.nextLine();
+                            System.out.print("Enter the name of GPU:");
+                            String GPU=scanner.nextLine();
+                            System.out.print("Enter the name of motherboard:");
+                            String motherboard=scanner.nextLine();
+                            System.out.print("Enter the name of RAM:");
+                            String RAM=scanner.nextLine();
+                            System.out.print("Enter the name of PCU:");
+                            String PCU=scanner.nextLine();
+                            System.out.print("Enter the name of cooling system:");
+                            String cooling_system=scanner.nextLine();
+                            System.out.print("Enter the name of storage device:");
+                            String storage_device=scanner.nextLine();
+                            System.out.print("Enter the name of case:");
+                            String Case = scanner.nextLine();
+                            list[i]= new CreatePC(CPU,GPU,motherboard,RAM,PCU,cooling_system,storage_device,Case);
                         } else {
                             list[i] = new CreatePC(list[i-1]);  
                         }
