@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("========== ПРОДОВОЛЬСТВЕННЫЙ МАГАЗИН ==========\n");
@@ -23,14 +20,14 @@ public class Main {
         order.printOrder();
 
         System.out.println("\n--- Проверка свежести (полиморфизм) ---");
-        List<Perishable> perishables = new ArrayList<>();
-        perishables.add(milk1);
-        perishables.add(milk2);
-        perishables.add(apple1);
-        perishables.add(apple2);
+        Perishable[] perishables = new Perishable[4];
+        perishables[0] = milk1;
+        perishables[1] = milk2;
+        perishables[2] = apple1;
+        perishables[3] = apple2;
 
-        for (Perishable p : perishables) {
-            p.checkFreshness();
+        for (int i = 0; i < perishables.length; i++) {
+            perishables[i].checkFreshness();
         }
 
         System.out.println("\n--- Сравнение объектов (equals) ---");
@@ -40,22 +37,23 @@ public class Main {
         System.out.println("hashCode apple1: " + apple1.hashCode());
         System.out.println("hashCode apple3: " + apple3.hashCode());
 
-        System.out.println("\n--- Все товары в магазине (коллекция) ---");
-        List<Product> allProducts = new ArrayList<>();
-        allProducts.add(milk1);
-        allProducts.add(milk2);
-        allProducts.add(bread);
-        allProducts.add(apple1);
-        allProducts.add(apple2);
+        System.out.println("\n--- Все товары в магазине (массив) ---");
+        Product[] allProducts = new Product[5];
+        allProducts[0] = milk1;
+        allProducts[1] = milk2;
+        allProducts[2] = bread;
+        allProducts[3] = apple1;
+        allProducts[4] = apple2;
 
-        for (Product p : allProducts) {
-            System.out.println(p);
+        for (int i = 0; i < allProducts.length; i++) {
+            System.out.println(allProducts[i]);
         }
 
         System.out.println("\n--- Калорийность заказа ---");
         int totalCalories = 0;
-        for (Product p : order.getProducts()) {
-            totalCalories += p.calculateCalories();
+        Product[] orderProducts = order.getProducts();
+        for (int i = 0; i < order.getProductCount(); i++) {
+            totalCalories += orderProducts[i].calculateCalories();
         }
         System.out.println("Общая калорийность заказа: " + totalCalories + " ккал");
     }
