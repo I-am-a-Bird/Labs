@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    font-family: 'Segoe UI', 'Courier New', monospace;
+    background: linear-gradient(135deg, #2c3e2f 0%, #1a2a1c 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    max-width: 1300px;
+    width: 100%;
+    background: #fdf8e7;
+    background-image: radial-gradient(circle at 10% 20%, rgba(210, 180, 140, 0.1) 2%, transparent 2.5%);
+    background-size: 30px 30px;
+    border-radius: 48px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .game-container {
+        padding: 30px;
+    }
+}
+
+.game-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+@media (min-width: 900px) {
+    .game-layout {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+/* Левая панель — виселица */
+.gallows-panel {
+    flex: 1.2;
+    background: #f5e6c8;
+    border-radius: 32px;
+    padding: 20px;
+    box-shadow: inset 0 0 0 2px #fff8, 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.canvas-wrapper {
+    background: #e8d5b5;
+    border-radius: 24px;
+    padding: 15px;
+    text-align: center;
+}
+
+canvas {
+    background: #faf0dc;
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Правая панель — игра */
+.game-panel {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Поле слова */
+.word-area {
+    background: #2c2418;
+    border-radius: 28px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3), 0 5px 0 #1a140e;
+}
+
+.word-display {
+    font-family: 'Courier New', 'Fira Code', monospace;
+    font-size: clamp(1.5rem, 7vw, 3rem);
+    font-weight: 800;
+    letter-spacing: 12px;
+    color: #fadf9e;
+    text-shadow: 3px 3px 0 #5a3e1b;
+    word-break: break-word;
+    background: #1f1910;
+    padding: 18px;
+    border-radius: 20px;
+}
+
+/* Статистика */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.stats-card {
+    background: #3e2a1f;
+    border-radius: 60px;
+    padding: 12px 24px;
+    color: #ffefc0;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: inset 0 1px 0 #6b4c33, 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.used-letters {
+    background: #2c2418;
+    border-radius: 28px;
+    padding: 16px;
+}
+
+.used-title {
+    font-weight: bold;
+    color: #d4a373;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.used-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.badge {
+    background: #5e3a2b;
+    padding: 6px 14px;
+    border-radius: 40px;
+    color: #f5e2b0;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.badge.mistake {
+    background: #8b3a3a;
+    color: #ffc9c9;
+    text-decoration: line-through;
+}
+
+/* Клавиатура */
+.keyboard {
+    background: #d9c6a7;
+    border-radius: 36px;
+    padding: 20px;
+    box-shadow: inset 0 1px 4px #fff6, 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.key-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    gap: 8px;
+}
+
+.key-btn {
+    background: #2d2b26;
+    border: none;
+    color: #ffefcf;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px 0;
+    min-width: 52px;
+    width: clamp(52px, 8vw, 70px);
+    border-radius: 60px;
+    cursor: pointer;
+    transition: all 0.08s linear;
+    box-shadow: 0 4px 0 #12100e;
+    font-family: monospace;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.key-btn span.key-hint {
+    font-size: 0.65rem;
+    background: #5f4c38;
+    padding: 2px 6px;
+    border-radius: 30px;
+    color: #ffde9c;
+}
+
+.key-btn:hover {
+    background: #4f433a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #12100e;
+}
+
+.key-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #12100e;
+}
+
+.key-btn.disabled, .key-btn:disabled {
+    opacity: 0.5;
+    transform: none;
+    cursor: not-allowed;
+    filter: grayscale(0.1);
+    box-shadow: 0 4px 0 #12100e;
+}
+
+/* Кнопки управления */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    background: #5c3e2b;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 80px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #f9e2b7;
+    cursor: pointer;
+    transition: 0.1s linear;
+    box-shadow: 0 5px 0 #2f241b;
+}
+
+.action-btn:hover {
+    background: #7c563c;
+    transform: translateY(-2px);
+}
+
+.action-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #2f241b;
+}
+
+/* Сообщения */
+.message-area {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #b96f30;
+    background: #fff0db;
+    padding: 12px;
+    border-radius: 60px;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .game-container {
+        padding: 12px;
+    }
+    .key-btn {
+        min-width: 44px;
+        padding: 8px 0;
+        font-size: 0.9rem;
+    }
+    .word-display {
+        letter-spacing: 6px;
+        font-size: 1.4rem;
+    }
+    .stats-card {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
+}

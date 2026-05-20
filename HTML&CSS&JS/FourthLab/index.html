@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Лабораторные работы - Вариант 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <h2>Лабораторные работы</h2>
+            <p class="variant-badge">Вариант 4</p>
+            <nav class="lab-nav">
+                <button class="lab-btn active" data-lab="lab2">Лабораторная №2</button>
+                <button class="lab-btn" data-lab="lab3">Лабораторная №3</button>
+                <button class="lab-btn" data-lab="lab4">Лабораторная №4</button>
+                <button class="lab-btn" data-lab="lab5">Лабораторная №5</button>
+                <button class="lab-btn" data-lab="lab6">Лабораторная №6</button>
+                <button class="lab-btn" data-lab="lab7">Лабораторная №7</button>
+                <button class="lab-btn" data-lab="lab8">Лабораторная №8</button>
+                <button class="lab-btn" data-lab="lab9">Лабораторная №9</button>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <!-- ЛАБОРАТОРНАЯ №2 -->
+            <div id="lab2" class="lab-panel active">
+                <h1>Лабораторная работа №2</h1>
+                <p class="description">Создание простых скриптов на JavaScript</p>
+                <p class="variant-info">Номера символов: 03, 05, 06, 12, 20, 21 | Операции: *, /</p>
+
+                <div class="task-card">
+                    <h3>Задание 1</h3>
+                    <p>Создать строку из 22 первых букв русского алфавита. Вывести символы с указанными номерами, разделив их номером варианта.</p>
+                    <button class="btn" onclick="lab2_task1()">Выполнить</button>
+                    <div id="lab2_result1" class="result"></div>
+                </div>
+
+                <div class="task-card">
+                    <h3>Задание 2</h3>
+                    <p>Построить строку из цифр "Номера символов". Выделить четыре трехзначных числа. Построить оператор присваивания с операциями * и /.</p>
+                    <button class="btn" onclick="lab2_task2()">Выполнить</button>
+                    <div id="lab2_result2" class="result"></div>
+                </div>
+
+                <div class="task-card">
+                    <h3>Задание 3</h3>
+                    <p>Построить строку из букв по заданным номерам. Вывести через innerHTML.</p>
+                    <button class="btn" onclick="lab2_task3()">Выполнить</button>
+                    <div id="lab2_result3" class="result"></div>
+                </div>
+
+                <div class="task-card">
+                    <h3>Задание 4</h3>
+                    <p>Confirm: Да → y=(a²+b)/c, Нет → f=d/(5+e²). Результат через writeln.</p>
+                    <button class="btn" onclick="lab2_task4()">Выполнить</button>
+                    <div id="lab2_result4" class="result"></div>
+                </div>
+            </div>
+
+            <!-- ЛАБОРАТОРНАЯ №3 -->
+            <div id="lab3" class="lab-panel">
+                <h1>Лабораторная работа №3</h1>
+                <p class="description">Изучение функций обработки событий JavaScript</p>
+                <p class="variant-info">Вариант 4: toFixed(n=2) | Math.pow(n=6) | массив из 8 чисел → сумма 6-х степеней</p>
+
+                <div class="task-card">
+                    <h3>Задание 1: Модуль и округление</h3>
+                    <p>Число: 264.289 | Округление: toFixed(2)</p>
+                    <button class="btn" onclick="lab3_task1()">Вычислить</button>
+                    <div id="lab3_result1" class="result"></div>
+                </div>
+
+                <div class="task-card">
+                    <h3>Задание 2: Массив из 8 вещественных чисел</h3>
+                    <p>Массив: [2.5, 1.2, 3.8, 4.1, 0.7, 5.6, 2.2, 3.3] → Math.pow(n=6) и сумма</p>
+                    <button class="btn" onclick="lab3_task2()">Вычислить</button>
+                    <div id="lab3_result2" class="result"></div>
+                </div>
+
+                <div class="task-card">
+                    <h3>Демонстрация Math методов</h3>
+                    <button class="btn" onclick="lab3_task3()">Показать примеры</button>
+                    <div id="lab3_result3" class="result"></div>
+                </div>
+            </div>
+
+            <!-- ЛАБОРАТОРНАЯ №4 -->
+            <div id="lab4" class="lab-panel">
+                <h1>Лабораторная работа №4</h1>
+                <p class="description">Изучение операторов ветвлений и циклов JavaScript</p>
+                <p class="variant-info">Вариант 4 (по таблице 4.1)</p>
+
+                <div class="task-card">
+                    <h3>Задача 1: Дни недели</h3>
+                    <p>lang = "анг", оператор if</p>
+                    <button class="btn" onclick="lab4_task1()">Выполнить</button>
+                    <div id="lab4_result1" class="result"></div>
+                </div>
+
+                <div class="task-card">
+                    <h3>Задача 2: Проверка символа и суммы цифр</h3>
+                    <p>Строка 'ab12cde345', k=8</p>
+                    <button class="btn" onclick="lab4_task2()">Выполнить</button>
+                    <div id="lab4_result2" class="result"></div>
+                </div>
+
+                <div class="task-card">
+                    <h3>Задача 3: Анализ даты</h3>
+                    <p>Определить ВГ, ДМ, месяц, високосность</p>
+                    <button class="btn" onclick="lab4_task3()">Выполнить</button>
+                    <div id="lab4_result3" class="result"></div>
+                </div>
+
+                <div class="task-card">
+                    <h3>Задача 4: Массив из 25 вещественных чисел</h3>
+                    <p>СЧЭ, ПЭНН, СЭКЗ, ПНЧЭ</p>
+                    <button class="btn" onclick="lab4_task4()">Выполнить</button>
+                    <div id="lab4_result4" class="result"></div>
+                </div>
+            </div>
+
+            <!-- ЛАБОРАТОРНАЯ №5 -->
+            <div id="lab5" class="lab-panel">
+                <h1>Лабораторная работа №5</h1>
+                <p class="description">Изучение методов JavaScript</p>
+                <p class="variant-info">Вариант 4: ctg(x) | сортировка по убыванию | дата: день, час, минута</p>
+
+                <div class="task-card">
+                    <h3>Задание 1: Массив из 14 элементов (ctg)</h3>
+                    <button class="btn" onclick="lab5_task1()">Заполнить и отсортировать</button>
+                    <div id="lab5_result1" class="result"></div>
+                </div>
+
+                <div class="task-card">
+                    <h3>Задание 2: Текущая дата</h3>
+                    <p>Формат: день, час, минута | Date.parse | getTime</p>
+                    <button class="btn" onclick="lab5_task2()">Вывести дату</button>
+                    <div id="lab5_result2" class="result"></div>
+                </div>
+
+                <div class="task-card">
+                    <h3>Задание 3: Площадь шестиугольника</h3>
+                    <button class="btn" onclick="lab5_task3()">Вычислить</button>
+                    <div id="lab5_result3" class="result"></div>
+                </div>
+            </div>
+
+            <!-- ЛАБОРАТОРНАЯ №6 -->
+            <div id="lab6" class="lab-panel">
+                <h1>Лабораторная работа №6</h1>
+                <p class="description">Изучение работы с массивами на JavaScript</p>
+                <p class="variant-info">Вариант 4 (по таблице 6.1)</p>
+
+                <div class="task-card">
+                    <h3>Задание 1: Одномерный массив</h3>
+                    <p>Исходный: [7,5,8] | k=4, m=2, n=3</p>
+                    <button class="btn" onclick="lab6_task1()">Выполнить</button>
+                    <div id="lab6_result1" class="result"></div>
+                </div>
+
+                <div class="task-card">
+                    <h3>Задание 2: Двумерный массив 4x6, сортировка четных строк</h3>
+                    <button class="btn" onclick="lab6_task2()">Выполнить</button>
+                    <div id="lab6_result2" class="result"></div>
+                </div>
+
+                <div class="task-card">
+                    <h3>Задание 3: Массив 5x8, join и reverse</h3>
+                    <button class="btn" onclick="lab6_task3()">Выполнить</button>
+                    <div id="lab6_result3" class="result"></div>
+                </div>
+
+                <div class="task-card">
+                    <h3>Задание 4: Массив 5x7, unshift/push/shift/pop</h3>
+                    <button class="btn" onclick="lab6_task4()">Выполнить</button>
+                    <div id="lab6_result4" class="result"></div>
+                </div>
+            </div>
+
+            <!-- ЛАБОРАТОРНАЯ №7 -->
+            <div id="lab7" class="lab-panel">
+                <h1>Лабораторная работа №7</h1>
+                <p class="description">Изучение работы с элементами управления JavaScript</p>
+                <p class="variant-info">Вариант 4 (по таблице 7.1)</p>
+
+                <div class="task-card">
+                    <h3>Задание 1: Генератор всплывающих окон</h3>
+                    <p>Длина линии: 57%, толщина: 2px</p>
+                    <button class="btn" onclick="lab7_task1()">Открыть окно</button>
+                    <div id="lab7_result1" class="result"></div>
+                </div>
+
+                <div class="task-card">
+                    <h3>Задание 2: Анкета сотрудника</h3>
+                    <p>МР (место рождения), должность, пол</p>
+                    <button class="btn" onclick="lab7_task2()">Показать анкету</button>
+                    <div id="lab7_result2" class="result"></div>
+                </div>
+
+                <div class="task-card">
+                    <h3>Задание 3: Анкета слушателя курсов</h3>
+                    <p>Курс, язык, ФО (форма обучения), стоимость</p>
+                    <button class="btn" onclick="lab7_task3()">Показать анкету</button>
+                    <div id="lab7_result3" class="result"></div>
+                </div>
+            </div>
+
+            <!-- ЛАБОРАТОРНАЯ №8 -->
+            <div id="lab8" class="lab-panel">
+                <h1>Лабораторная работа №8</h1>
+                <p class="description">Изучение работы с изображениями на языке JavaScript</p>
+
+                <div class="task-card">
+                    <h3>Смена изображения при нажатии</h3>
+                    <img id="lab8_image" src="https://placehold.co/300x200/2c7da0/white?text=Image+1" alt="Image" style="width:300px; border-radius:12px; cursor:pointer;">
+                    <div style="margin-top: 12px;">
+                        <button class="btn" onclick="lab8_changeImage()">Сменить изображение</button>
+                        <button class="btn" onclick="lab8_resetImage()">Вернуть обратно</button>
+                    </div>
+                    <div id="lab8_result1" class="result"></div>
+                </div>
+            </div>
+
+            <!-- ЛАБОРАТОРНАЯ №9 -->
+            <div id="lab9" class="lab-panel">
+                <h1>Лабораторная работа №9</h1>
+                <p class="description">Изучение технологии обработки событий на языке JavaScript</p>
+                <p class="variant-info">Вариант 4: увеличение до 42pt | цвет шрифта и изображение → голубой</p>
+
+                <div class="task-card">
+                    <h3>Задание: Строка с изменением при наведении</h3>
+                    <p id="lab9_text" class="hover-text" 
+                       onmouseover="lab9_textOver()" 
+                       onmouseout="lab9_textOut()">
+                        Наведи на меня курсор
+                    </p>
+                </div>
+
+                <div class="task-card">
+                    <h3>Задание: Изображение с подписью</h3>
+                    <div class="image-container">
+                        <img id="lab9_image" src="https://placehold.co/300x200/1e466e/white?text=Image" 
+                             style="width:300px; border-radius:12px; cursor:pointer;" 
+                             onclick="lab9_imageClick()">
+                        <p id="lab9_caption" class="caption" onclick="lab9_captionClick()">
+                            Подпись: нажми на меня
+                        </p>
+                    </div>
+                    <div id="lab9_result" class="result"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

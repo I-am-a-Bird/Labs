@@ -19,7 +19,7 @@ public class Main {
 
         order.printOrder();
 
-        System.out.println("\n--- Проверка свежести (полиморфизм) ---");
+        System.out.println("\n--- Проверка свежести ---");
         Perishable[] perishables = new Perishable[4];
         perishables[0] = milk1;
         perishables[1] = milk2;
